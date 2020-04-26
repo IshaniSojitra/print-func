@@ -1,3 +1,36 @@
-<p>Hello, Print!</p>
-
-<input type="submit" (click)="onSubmit()" value="Print"/>
+<form [formGroup]="billForm">
+    <div class="container">
+        <h3 style="text-align: center;margin-bottom: 20px">Industry Name</h3>
+        <div class="row">
+            <div class="col-md-2">
+                <label for="invoiceNo">Inv No. :</label>
+            </div>
+            <div class="col-md-2">
+                <input *ngIf="isEditForm" type="text" class="form-control" formControlName="invoiceNo"/>
+                <span *ngIf="!isEditForm">{{this.billForm.get('invoiceNo').value}}</span>
+            </div>
+            <div class="col-md-1 offset-md-3">
+                <label for="todayDate">Date:</label>
+            </div>
+            <div class="col-md-2">
+                <!-- {{todayDate | date : 'dd/mm/yyyy'}} -->
+                <input *ngIf="isEditForm" type="text" class="form-control" formControlName="todayDate"/>
+                <span *ngIf="!isEditForm">{{this.billForm.get('todayDate').value}}</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <label for="customerName">Customer Name</label>
+            </div>
+            <div class="col-md-2">
+                <input *ngIf="isEditForm" type="text" class="form-control" formControlName="customerName"/>
+                <span *ngIf="!isEditForm">{{this.billForm.get('customerName').value}}</span>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <input *ngIf="isEditForm" type="button" class="btn btn-info" (click)="previewPage()" value="Preview"/>
+            <input *ngIf="!isEditForm" type="button" class="btn btn-info buttonClass" (click)="backPage()" value="Back"/>
+            <input *ngIf="!isEditForm" type="submit" class="btn btn-secondary" (click)="onSubmit()" value="Print"/>
+        </div>
+    </div>
+</form>

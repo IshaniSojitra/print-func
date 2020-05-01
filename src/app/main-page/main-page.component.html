@@ -1,0 +1,110 @@
+<form [formGroup]="billForm">
+  <div class="container">
+    <h3 style="text-align: center;margin-bottom: 20px">Industry Name</h3>
+    <div class="row">
+      <div class="col-sm-2">
+        <label for="invoiceNo">Invoice No. :</label>
+      </div>
+      <div class="col-sm-2">
+        <input type="text" class="form-control" formControlName="invoiceNo" />
+        <!-- <span *ngIf="!isEditForm">{{this.billForm.get('invoiceNo').value}}</span> -->
+      </div>
+      <div class="col-sm-1 offset-sm-3">
+        <label for="todayDate">Date:</label>
+      </div>
+      <div class="col-sm-2">
+        <!-- {{todayDate | date : 'dd/mm/yyyy'}} -->
+        <input type="text" class="form-control" formControlName="todayDate" />
+        <!-- <span *ngIf="!isEditForm">{{this.billForm.get('todayDate').value}}</span> -->
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <label for="consignee">Name & Addr. of Consignee:</label>
+      </div>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" formControlName="consignee" />
+        <!-- <span *ngIf="!isEditForm">{{this.billForm.get('customerName').value}}</span> -->
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <label for="custGST">Customer GSTIN:</label>
+      </div>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" formControlName="custGST" />
+        <!-- <span *ngIf="!isEditForm">{{this.billForm.get('customerName').value}}</span> -->
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <label for="goodsDesc">Description of Goods:</label>
+      </div>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" formControlName="goodsDesc" />
+        <!-- <span *ngIf="!isEditForm">{{this.billForm.get('customerName').value}}</span> -->
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <label for="hsnCode">HSN Code:</label>
+      </div>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" formControlName="hsnCode" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <label for="quantity">Quantity:</label>
+      </div>
+      <div class="col-sm-3">
+        <input type="number" class="form-control" formControlName="quantity" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <label for="rate">Rate:</label>
+      </div>
+      <div class="col-sm-3">
+        <input type="number" class="form-control" formControlName="rate" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <label for="gst">GST %</label>
+      </div>
+      <div class="col-sm-3">
+        <input type="number" class="form-control" formControlName="gst" />
+      </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-2">
+          <label for="vehicleNo">Vehicle No.</label>
+        </div>
+        <div class="col-sm-3">
+          <input type="text" class="form-control" formControlName="vehicleNo" />
+        </div>
+      </div>
+
+      <div class="row">
+          <div class="col-sm-2">
+            <label for="lrNo">L R No.</label>
+          </div>
+          <div class="col-sm-3">
+            <input type="text" class="form-control" formControlName="lrNo" />
+          </div>
+        </div>
+
+    <div class="row justify-content-center">
+      <input type="button" [routerLink]="['/preview']" class="btn btn-info" value="Preview" />
+    </div>
+  </div>
+</form>

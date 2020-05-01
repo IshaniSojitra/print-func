@@ -1,0 +1,25 @@
+.common{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+table, th, td {
+    border: 1px solid black;
+  }
+
+.rowProp {
+    height : 600px;
+    vertical-align: top;
+}
+
+pre {
+    display: contents !important;
+    font-family: sans-serif !important;
+}
+
+.border{
+    border-color: black !important;
+}
+
+.buttonClass{
+    margin-right:30px;
+}

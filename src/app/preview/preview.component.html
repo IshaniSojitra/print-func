@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-12 border text-center">
+    <div class="col-sm-12 border text-center" style="border-bottom:none !important">
       <br>
       <span style="font-family: fantasy; font-size: 35px;text-decoration: underline">SHREENATHJI CEMENT
         INDUSTRIES</span>
@@ -11,22 +11,22 @@
   </div>
 
   <div class="row">
-    <div class="col-sm-9 border">
+    <div class="col-sm-9 border" style="border-bottom:none !important;border-right:none !important">
       <span>Name & Address of Consignee:</span>
       <br>
+      <span style="margin-left:30px;">{{this.consignee}}</span>
       <br>
       <br>
-      <br>
-      <span>Customer GSTIN:</span><br>
+      <span>Customer GSTIN: {{this.custGST}}</span><br>
       <pre>State           : Gujarat</pre><br>
       <pre>State Code : 24</pre>
     </div>
-    <div class="col-sm-3 border">
+    <div class="col-sm-3 border" style="border-bottom:none !important">
       <span style="font-weight: bold"> CASH MEMO/ DEBIT MEMO</span>
       <br><br><br><br>
-      <span>INVOICE No.: </span>
+      <span>INVOICE No.: {{this.invoiceNo}}</span>
       <br>
-      <span>DATE:</span>
+      <span>DATE: {{this.todayDate}}</span>
     </div>
   </div>
 
@@ -36,58 +36,58 @@
         <th style="width:5%">Sr. No.</th>
         <th style="width:35%">Description of Goods</th>
         <th style="width:15%">HSN Code</th>
-        <th style="width:10%">Total Quantity</th>
+        <th style="width:10%">Quantity M.T.</th>
         <th style="width:10%">Rate</th>
         <th style="width:10%">GST%</th>
         <th style="width:15%">Total Amount</th>
       </tr>
       <tr>
         <td class="rowProp">1.</td>
-        <td class="rowProp"></td>
-        <td class="rowProp"></td>
-        <td class="rowProp"></td>
-        <td class="rowProp"></td>
-        <td class="rowProp"></td>
-        <td class="rowProp"></td>
+        <td class="rowProp">{{this.goodsDesc}}</td>
+        <td class="rowProp">{{this.hsnCode}}</td>
+        <td class="rowProp">{{this.quantity | number : '1.2'}}</td>
+        <td class="rowProp">{{this.rate | number : '1.2'}}</td>
+        <td class="rowProp">{{this.gst | number : '1.2'}}</td>
+        <td class="amtProp">{{this.totAmount | number : '1.2'}}</td>
       </tr>
       <tr>
         <td colspan="5">Dispatch Through:</td>
         <td>TOTAL Rs.</td>
-        <td></td>
+        <td class="amtProp">{{this.totAmount | number : '1.2'}}</td>
       </tr>
       <tr>
-          <td colspan="5">L R No.:</td>
-          <td>SGST @ %</td>
-          <td></td>
+          <td colspan="5">L R No.: {{this.lrNo}}</td>
+          <td>SGST@ {{this.halfgst | number : '1.2'}} %</td>
+          <td class="amtProp">{{halfgstAmt | number : '1.2'}}</td>
         </tr>
       <tr>
-        <td colspan="5">Vehical No.:</td>
-        <td>CGST @ %</td>
-        <td></td>
+        <td colspan="5">Vehical No.: {{this.vehicleNo}}</td>
+        <td>CGST@ {{this.halfgst | number : '1.2'}} %</td>
+        <td class="amtProp">{{halfgstAmt | number : '1.2'}}</td>
       </tr>
       <tr>
-        <td colspan="5">Rupees in Words:</td>
+        <td colspan="5">GST Amount in Words:  {{this.totgstWord | titlecase}}</td>
         <td>Round off</td>
-        <td></td>
+        <td class="amtProp">{{this.roundOff | number : '1.2'}}</td>
       </tr>
       <tr>
-        <td colspan="5">GST Amount in Words:</td>
+        <td colspan="5">Rupees in Words: {{this.grandTotWord | titlecase}}</td>
         <td>GRAND TOTAL</td>
-        <td></td>
+        <td class="amtProp">{{this.grandTot | number : '1.2'}}</td>
       </tr>
     </table>
   </div>
 
   <div class="row">
-    <div class="col-sm-9 border" style="font-weight:bold">
+    <div class="col-sm-9" style="font-weight:bold;border-left:1px solid black">
       <span>We hereby declare that our registration certificate number are as under</span><br><br>
-      <pre>GSTIN No. 24ABHFS8289H1ZM</pre><br>
-      <pre>Bank Name   : KOTAK MAHINDRA</pre><br>
-      <pre>Bank A/c No. : 1612988837</pre><br>
+      <pre>GSTIN No.      : 24ABHFS8289H1ZM</pre><br>
+      <pre>Bank Name    : KOTAK MAHINDRA</pre><br>
+      <pre>Bank A/c No.  : 1612988837</pre><br>
       <pre>IFSC Code     : KKBK0002788</pre><br><br>
       <span>This Product is manufactured by mini cement plant</span>
     </div>
-    <div class="col-sm-3 border text-center">
+    <div class="col-sm-3 border text-center" style="border-bottom:none !important;border-top:none !important">
       <span style="font-size:12px">For and behalf of:</span>
       <br>
       <span style="font-weight: bold; font-size:14px">SHREENATHJI CEMENT INDUSTRIES</span>
@@ -103,10 +103,10 @@
   <div class="row">
     <div class="col-sm-12 border">
       <span>Terms & Conditions:</span><br>
-      <pre>1. Our responsibility cease as soon as goods are handed over to carries/your representative.</pre><br>
-      <pre>2. Sold goods will not be taken back or exchanged.</pre><br>
-      <pre>3. If payment is not received within 15 days agreed by us, interest @24% will be charged.</pre><br>
-      <pre>4. All transactions are subject to local Jurisdiction only</pre>
+      <span>1. Our responsibility cease as soon as goods are handed over to carries/your representative.</span><br>
+      <span>2. Sold goods will not be taken back or exchanged.</span><br>
+      <span>3. If payment is not received within 15 days agreed by us, interest @24% will be charged.</span><br>
+      <span>4. All transactions are subject to local Jurisdiction only</span>
     </div>
   </div>
 

@@ -11,6 +11,11 @@ table, th, td {
     vertical-align: top;
 }
 
+.amtProp{
+    vertical-align: top;
+    text-align: right;
+}
+
 pre {
     display: contents !important;
     font-family: sans-serif !important;

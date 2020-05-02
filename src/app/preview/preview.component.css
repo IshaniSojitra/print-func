@@ -28,3 +28,7 @@ pre {
 .buttonClass{
     margin-right:30px;
 }
+
+.italic{
+    font-style: italic;
+}

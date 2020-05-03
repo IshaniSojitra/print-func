@@ -1,5 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: FredokaFamily;
+    src: url("/assets/fonts/FredokaOne-Regular.ttf") format("truetype");
+}
 
+@font-face {
+    font-family: RajdhaniFamily;
+    src: url("/assets/fonts/Rajdhani-Medium.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: RobotoFamily;
+    src: url("/assets/fonts/Roboto-Bold.ttf") format("truetype");
+}
 
 @media print{
     @page 
@@ -14,4 +27,5 @@
 
 .container{
     margin-top:50px;
+    font-size: 20px;
 }

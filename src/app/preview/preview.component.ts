@@ -19,16 +19,21 @@ export class PreviewComponent implements OnInit {
   consignee;
   custGST;
   vehicleNo;
-  lrNo;
+  dispatch;
+  mobile;
+  idMark;
+  igst;
 
   totAmount;
   halfgst;
   halfgstAmt;
+  igstAmt;
   grandTot;
   roundOff;
 
   grandTotWord;
   totgstWord;
+  totigstWord;
 
   constructor(private service: DataServiceService) { }
 
@@ -45,36 +50,70 @@ export class PreviewComponent implements OnInit {
     this.consignee = this.data[0].consignee;
     this.custGST = this.data[0].custGST;
     this.vehicleNo = this.data[0].vehicleNo;
-    this.lrNo = this.data[0].lrNo;
+    this.dispatch = this.data[0].dispatch;
+    this.mobile = this.data[0].mobile;
+    this.idMark = this.data[0].idMark;
+    this.igst = this.data[0].igst;
 
     this.totAmount = this.rate * this.quantity;
-    this.halfgst = this.gst / 2;
-    this.halfgstAmt = this.totAmount * (this.halfgst / 100);
-    this.grandTot = this.totAmount + (this.halfgstAmt * 2);
-    this.roundOff = Math.round(this.grandTot) - this.grandTot;
-    this.grandTot = Math.round(this.grandTot);
 
-    this.grandTotWord = (numToWords(this.grandTot, { ands: true })).toUpperCase() + " ONLY";
-    var re = /\-/gi;
-    this.grandTotWord = this.grandTotWord.replace(re, " ");
+    if (this.gst != 0) {
+      this.halfgst = this.gst / 2;
+      this.halfgstAmt = this.totAmount * (this.halfgst / 100);
 
-    var gstTotal = this.halfgstAmt * 2;
-    var gstTotalPs = (gstTotal.toFixed(2)).split('.');
-    var newgstPs = parseInt(gstTotalPs[1]);
-    var newgstPsWord;
-  
-    var andF = false;
-    if(newgstPs != 0){
-      newgstPsWord = " And " + numToWords(newgstPs) + " Paise";
+      var gstTotal = this.halfgstAmt * 2;
+      var gstTotalPs = (gstTotal.toFixed(2)).split('.');
+      var newgstPs = parseInt(gstTotalPs[1]);
+      var newgstPsWord;
+
+      var andF = false;
+      if (newgstPs != 0) {
+        newgstPsWord = " And " + numToWords(newgstPs) + " Paise";
+      }
+      else {
+        newgstPsWord = "";
+        andF = true;
+      }
+
+      this.totgstWord = numToWords(gstTotal, { ands: andF }) + newgstPsWord + " Only";
+      var re = /\-/gi;
+      this.totgstWord = this.totgstWord.replace(re, " ");
+
+      this.grandTot = this.totAmount + (this.halfgstAmt * 2);
     }
-    else{
-      newgstPsWord = "";
-      andF = true;
+
+    if (this.igst != 0) {
+      this.igstAmt = this.totAmount * (this.igst / 100);
+
+      var igstTotal = this.igstAmt;
+      var igstTotalPs = (igstTotal.toFixed(2)).split('.');
+      var newigstPs = parseInt(igstTotalPs[1]);
+      var newigstPsWord;
+
+      var andF = false;
+      if (newigstPs != 0) {
+        newigstPsWord = " And " + numToWords(newigstPs) + " Paise";
+      }
+      else {
+        newigstPsWord = "";
+        andF = true;
+      }
+
+      this.totigstWord = numToWords(igstTotal, { ands: andF }) + newigstPsWord + " Only";
+      var re = /\-/gi;
+      this.totigstWord = this.totigstWord.replace(re, " ");
+
+      this.grandTot = this.totAmount + this.igstAmt;
     }
 
-    this.totgstWord =  numToWords(gstTotal, { ands: andF }) + newgstPsWord + " Only";
-    var re = /\-/gi;
-    this.totgstWord = this.totgstWord.replace(re, " ");
+    if (this.grandTot != undefined) {
+      this.roundOff = Math.round(this.grandTot) - this.grandTot;
+      this.grandTot = Math.round(this.grandTot);
+
+      this.grandTotWord = numToWords(this.grandTot, { ands: true }) + " Only";
+      var re = /\-/gi;
+      this.grandTotWord = this.grandTotWord.replace(re, " ");
+    }
   }
 
   onSubmit() {

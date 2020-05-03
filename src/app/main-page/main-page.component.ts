@@ -25,14 +25,17 @@ export class MainPageComponent implements OnInit {
       invoiceNo: "",
       todayDate: "",
       goodsDesc: "",
-      hsnCode: "",
+      hsnCode: "25231000",
       quantity: 0,
       rate: 0,
       gst: 0,
       consignee: "",
       custGST: "",
       vehicleNo: "",
-      lrNo: ""
+      dispatch: "",
+      mobile: "",
+      idMark: "",
+      igst: 0
     });
     this.todayDat = new Date();
     var newDate = this.todayDat.getDate() + '/' + (this.todayDat.getMonth() + 1) + '/' + this.todayDat.getFullYear();
@@ -51,7 +54,10 @@ export class MainPageComponent implements OnInit {
         consignee: this.data[0].consignee,
         custGST: this.data[0].custGST,
         vehicleNo: this.data[0].vehicleNo,
-        lrNo: this.data[0].lrNo
+        dispatch: this.data[0].dispatch,
+        mobile: this.data[0].mobile,
+        idMark: this.data[0].idMark,
+        igst: this.data[0].igst
       })
     }
   }
@@ -69,7 +75,10 @@ export class MainPageComponent implements OnInit {
       'consignee': this.billForm.get('consignee').value,
       'custGST': this.billForm.get('custGST').value,
       'vehicleNo': this.billForm.get('vehicleNo').value,
-      'lrNo': this.billForm.get('lrNo').value,
+      'dispatch': this.billForm.get('dispatch').value,
+      'mobile': this.billForm.get('mobile').value,
+      'idMark': this.billForm.get('idMark').value,
+      'igst': this.billForm.get('igst').value
     });
     console.log(this.dataList);
     this.service.changeMessage(this.dataList);

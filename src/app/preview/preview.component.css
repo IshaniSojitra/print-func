@@ -1,13 +1,13 @@
-.common{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
 table, th, td {
     border: 1px solid black;
   }
 
+td{
+    height: 40px;
+}
+
 .rowProp {
-    height : 600px;
+    height : 400px;
     vertical-align: top;
 }
 

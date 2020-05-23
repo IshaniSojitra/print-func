@@ -23,6 +23,10 @@ export class PreviewComponent implements OnInit {
   mobile;
   idMark;
   igst;
+  invoice;
+  custState;
+  custStateCode;
+  freight;
 
   totAmount;
   halfgst;
@@ -54,6 +58,10 @@ export class PreviewComponent implements OnInit {
     this.mobile = this.data[0].mobile;
     this.idMark = this.data[0].idMark;
     this.igst = this.data[0].igst;
+    this.invoice = this.data[0].invoice;
+    this.custState = this.data[0].custState;
+    this.custStateCode = this.data[0].custStateCode;
+    this.freight = this.data[0].freight;
 
     this.totAmount = this.rate * this.quantity;
 

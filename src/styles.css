@@ -14,6 +14,16 @@
     src: url("/assets/fonts/Roboto-Bold.ttf") format("truetype");
 }
 
+@font-face {
+    font-family: BahamasFamily;
+    src: url("/assets/fonts/Bahamas Bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: BankGothicFamily;
+    src: url("/assets/fonts/BankGthd.ttf") format("truetype");
+}
+
 @media print{
     @page 
     {

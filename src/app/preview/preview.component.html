@@ -1,19 +1,19 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-3 border" style="border-bottom:none !important;border-right:none !important">
-        <img src="/assets/build2.png" alt="Logo" height="130" width="210" style="margin:30px;">
+    <div class="col-sm-2 border" style="border-bottom:none !important;border-right:none !important">
+        <img src="/assets/build1.jpg" alt="Logo" height="130" width="150" style="margin-top:20px;">
     </div>
-    <div class="col-sm-6" style="border-top:1px solid black">
+    <div class="col-sm-7" style="border-top:1px solid black">
       <p style="display: inline-block">
-      <span style="font-family: FredokaFamily;font-weight: bold; font-size: 40px;text-decoration: underline">SHREENATHJI</span><br>
-      <span style="font-family: RajdhaniFamily; font-size: 35px;text-decoration: underline">CEMENT INDUSTRIES</span><br>
-      <span style="font-size:17px"> Survey No. 44, Plot No. 6,7,8, HADAMTALA</span><br>
-      <span style="font-size:17px">Ta. Kotdasangani, Dist.:Rajkot (Gujarat) Mo. 99989 45722</span></p>
+      <span style="font-family: BahamasFamily;font-weight: bold; font-size: 60px;text-decoration: underline">SHREENATHJI</span><br>
+      <span style="font-family: BankGothicFamily; font-size: 28px;text-decoration: underline">CEMENT INDUSTRIES</span><br>
+      <span style="font-size:20px"> Survey No. 44, Plot No. 6,7,8, HADAMTALA</span><br>
+      <span style="font-size:20px">Ta. Kotdasangani, Dist. : Rajkot (Gujarat), Mo. 99989 45722</span></p>
       <br>
     </div>
     <div class="col-sm-3 border" style="border-bottom:none !important;">
       <br>
-      <span style="font-family: RobotoFamily;font-size:25px;margin-left:40px;">TAX INVOICE</span><br><br><br>
+      <span style="font-family: RobotoFamily;font-size:25px;margin-left:30px;">{{this.invoice}} INVOICE</span><br><br><br>
       <pre>State           : Gujarat</pre><br>
       <pre>State Code : 24</pre>
     </div>
@@ -27,12 +27,24 @@
       <br>
       <br>
       <br>
+      
+    </div>
+    <div class="col-sm-3 border" style="border-bottom:none !important;font-size:25px;font-weight:bold">
+      <br>
+      <span>INVOICE No. : {{this.invoiceNo}}</span>
+      
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-6" style="border-left:1px solid black">
       <span style="font-weight:bold">Customer GSTIN: </span><span>{{this.custGST}}</span>
     </div>
-    <div class="col-sm-3 border" style="border-bottom:none !important;font-size:20px;font-weight:bold">
-      
-      <span>INVOICE No.: {{this.invoiceNo}}</span>
-      <br><br><br>
+    <div class="col-md-3">
+      <pre>State : {{this.custState}}</pre><br>
+      <pre>State Code : {{this.custStateCode}}</pre>
+    </div>
+    <div class="col-sm-3 border" style="border-bottom:none !important;border-top:none !important;font-size:20px;font-weight:bold">
       <span>DATE: {{this.todayDate}}</span>
     </div>
   </div>
@@ -41,34 +53,34 @@
     <table style="width:100%">
       <tr>
         <th style="width:5%">Sr. No.</th>
-        <th style="width:30%">Description of Goods</th>
+        <th style="width:25%">Description of Goods</th>
         <th style="width:15%">Identification Mark</th>
-        <th style="width:15%">HSN Code</th>
-        <th style="width:10%">Quantity M.T. / Bags</th>
+        <th style="width:10%">HSN Code</th>
+        <th style="width:15%">Quantity M.T. / Bags</th>
         <th style="width:15%">Rate</th>
-        <th style="width:10%">Total Amount</th>
+        <th style="width:15%">Total Amount</th>
       </tr>
       <tr>
-        <td class="rowProp">1.</td>
-        <td class="rowProp">{{this.goodsDesc}}</td>
-        <td class="rowProp">{{this.idMark}}</td>
-        <td class="rowProp">{{this.hsnCode}}</td>
-        <td class="rowProp">{{this.quantity | number : '1.2'}}</td>
-        <td class="rowProp">{{this.rate | number : '1.2'}}</td>
-        <td class="amtProp">{{this.totAmount | number : '1.2'}}</td>
+        <td class="rowProp"><br>1.</td>
+        <td class="rowProp"><br>{{this.goodsDesc}}</td>
+        <td class="rowProp"><br>{{this.idMark}}</td>
+        <td class="rowProp"><br>{{this.hsnCode}}</td>
+        <td class="rowProp"><br>{{this.quantity | number : '1.2'}}</td>
+        <td class="rowProp"><br>{{this.rate | number : '1.2'}}</td>
+        <td class="rowProp" style="text-align:right"><br>{{this.totAmount | number : '1.2'}}</td>
       </tr>
       <tr>
-        <td colspan="5">Dispatch Through  :  {{this.dispatch}}</td>
+        <td colspan="5"><span>Dispatch Through  :  {{this.dispatch}}</span><span style="margin-left:250px;">Freight: {{this.freight}}</span></td>
         <td>TOTAL Rs.</td>
         <td class="amtProp">{{this.totAmount | number : '1.2'}}</td>
       </tr>
       <tr>
-          <td colspan="5">Mobile No.  :  {{this.mobile}}</td>
+          <td colspan="5">Driver Mobile No.  :  {{this.mobile}}</td>
           <td>SGST@ {{this.halfgst | number : '1.2'}} %</td>
           <td class="amtProp">{{this.halfgstAmt | number : '1.2'}}</td>
         </tr>
       <tr>
-        <td colspan="5">Vehical No.  :   {{this.vehicleNo}}</td>
+        <td colspan="5">Vehicle No.  :   {{this.vehicleNo}}</td>
         <td>CGST@ {{this.halfgst | number : '1.2'}} %</td>
         <td class="amtProp">{{this.halfgstAmt | number : '1.2'}}</td>
       </tr>
@@ -85,7 +97,7 @@
       <tr>
         <td colspan="5"><span style="font-weight:bold">Bill Amount in Words: </span><span class="italic" style="margin-left:20px">{{this.grandTotWord | titlecase}}</span></td>
         <td style="font-weight:bold">GRAND TOTAL</td>
-        <td class="amtProp">{{this.grandTot | number : '1.2'}}</td>
+        <td class="amtProp" style="font-weight:bold">{{this.grandTot | number : '1.2'}}</td>
       </tr>
     </table>
   </div>
@@ -119,7 +131,7 @@
       <span>1. Our responsibility cease as soon as goods are handed over to carries/your representative.</span><br>
       <span>2. Sold goods will not be taken back or exchanged.</span><br>
       <span>3. If payment is not received within 15 days agreed by us, interest @24% will be charged.</span><br>
-      <span>4. All transactions are subject to local Jurisdiction only</span>
+      <span>4. All transactions are subject to Gondal Jurisdiction only</span><span style="font-style: italic;margin-left:350px;">E. & O.E.</span>
     </div>
   </div>
 

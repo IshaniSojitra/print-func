@@ -34,8 +34,12 @@ export class MainPageComponent implements OnInit {
       vehicleNo: "",
       dispatch: "",
       mobile: "",
-      idMark: "",
-      igst: 0
+      idMark: "53 GRADE",
+      igst: 0,
+      invoice: "",
+      custState: "",
+      custStateCode: "",
+      freight: ""
     });
     this.todayDat = new Date();
     var newDate = this.todayDat.getDate() + '/' + (this.todayDat.getMonth() + 1) + '/' + this.todayDat.getFullYear();
@@ -57,7 +61,11 @@ export class MainPageComponent implements OnInit {
         dispatch: this.data[0].dispatch,
         mobile: this.data[0].mobile,
         idMark: this.data[0].idMark,
-        igst: this.data[0].igst
+        igst: this.data[0].igst,
+        invoice: this.data[0].invoice,
+        custState: this.data[0].custState,
+        custStateCode: this.data[0].custStateCode,
+        freight: this.data[0].freight
       })
     }
   }
@@ -78,7 +86,11 @@ export class MainPageComponent implements OnInit {
       'dispatch': this.billForm.get('dispatch').value,
       'mobile': this.billForm.get('mobile').value,
       'idMark': this.billForm.get('idMark').value,
-      'igst': this.billForm.get('igst').value
+      'igst': this.billForm.get('igst').value,
+      'invoice': this.billForm.get('invoice').value,
+      'custState': this.billForm.get('custState').value,
+      'custStateCode': this.billForm.get('custStateCode').value,
+      'freight': this.billForm.get('freight').value
     });
     console.log(this.dataList);
     this.service.changeMessage(this.dataList);

@@ -27,11 +27,23 @@
 
     <div class="row">
       <div class="col-sm-2">
+        <label for="invoice">Invoice:</label>
+      </div>
+      <div class="col-sm-3">
+        <input type="radio" id="tax" name="invoice" formControlName="invoice" value="TAX">
+        <label for="tax">TAX</label>&nbsp;&nbsp;
+        <input type="radio" id="retail" name="invoice" formControlName="invoice" value="RETAIL">
+        <label for="retail">RETAIL</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2">
         <label for="consignee">Name & Addr. of Consignee:</label>
       </div>
       <div class="col-sm-3">
         <input type="text" class="form-control" formControlName="consignee" />
-        <!-- <span *ngIf="!isEditForm">{{this.billForm.get('customerName').value}}</span> -->
+        <!-- <textarea class="form-control" formControlName="consignee"></textarea> -->
       </div>
     </div>
 
@@ -42,6 +54,24 @@
       <div class="col-sm-3">
         <input type="text" class="form-control" formControlName="custGST" />
         <!-- <span *ngIf="!isEditForm">{{this.billForm.get('customerName').value}}</span> -->
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <label for="custState">Customer State:</label>
+      </div>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" formControlName="custState" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <label for="custStateCode">Customer State Code:</label>
+      </div>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" formControlName="custStateCode" />
       </div>
     </div>
 
@@ -120,7 +150,7 @@
 
     <div class="row">
       <div class="col-sm-2">
-        <label for="dispatch">Dispatch Through</label>
+        <label for="dispatch">Dispatch Through:</label>
       </div>
       <div class="col-sm-3">
         <input type="text" class="form-control" formControlName="dispatch" />
@@ -133,6 +163,15 @@
       </div>
       <div class="col-sm-3">
         <input type="text" class="form-control" formControlName="mobile" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <label for="freight">Freight:</label>
+      </div>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" formControlName="freight" />
       </div>
     </div>
 

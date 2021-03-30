@@ -24,6 +24,7 @@ export class PreviewComponent implements OnInit {
   idMark;
   igst;
   invoice;
+  custCity;
   custState;
   custStateCode;
   freight;
@@ -59,13 +60,14 @@ export class PreviewComponent implements OnInit {
     this.idMark = this.data[0].idMark;
     this.igst = this.data[0].igst;
     this.invoice = this.data[0].invoice;
+    this.custCity = this.data[0].custCity;
     this.custState = this.data[0].custState;
     this.custStateCode = this.data[0].custStateCode;
     this.freight = this.data[0].freight;
 
     this.totAmount = this.rate * this.quantity;
 
-    if (this.gst != 0) {
+    if (this.gst != 0 && this.gst != null) {
       this.halfgst = this.gst / 2;
       this.halfgstAmt = this.totAmount * (this.halfgst / 100);
 
@@ -90,7 +92,7 @@ export class PreviewComponent implements OnInit {
       this.grandTot = this.totAmount + (this.halfgstAmt * 2);
     }
 
-    if (this.igst != 0) {
+    if (this.igst != 0 && this.igst != null) {
       this.igstAmt = this.totAmount * (this.igst / 100);
 
       var igstTotal = this.igstAmt;

@@ -24,8 +24,8 @@ export class MainPageComponent implements OnInit {
     this.billForm = this.fb.group({
       invoiceNo: "",
       todayDate: "",
-      goodsDesc: "",
-      hsnCode: "25231000",
+      goodsDesc: "Ordinary Portland Cement",
+      hsnCode: "",
       quantity: 0,
       rate: 0,
       gst: 0,
@@ -37,6 +37,7 @@ export class MainPageComponent implements OnInit {
       idMark: "53 GRADE",
       igst: 0,
       invoice: "",
+      custCity: "",
       custState: "",
       custStateCode: "",
       freight: ""
@@ -63,6 +64,7 @@ export class MainPageComponent implements OnInit {
         idMark: this.data[0].idMark,
         igst: this.data[0].igst,
         invoice: this.data[0].invoice,
+        custCity: this.data[0].custCity,
         custState: this.data[0].custState,
         custStateCode: this.data[0].custStateCode,
         freight: this.data[0].freight
@@ -88,6 +90,7 @@ export class MainPageComponent implements OnInit {
       'idMark': this.billForm.get('idMark').value,
       'igst': this.billForm.get('igst').value,
       'invoice': this.billForm.get('invoice').value,
+      'custCity': this.billForm.get('custCity').value,
       'custState': this.billForm.get('custState').value,
       'custStateCode': this.billForm.get('custStateCode').value,
       'freight': this.billForm.get('freight').value

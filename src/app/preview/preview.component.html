@@ -5,47 +5,50 @@
     </div>
     <div class="col-sm-7" style="border-top:1px solid black">
       <p style="display: inline-block">
-      <span style="font-family: BahamasFamily;font-weight: bold; font-size: 60px;text-decoration: underline">SHREENATHJI</span><br>
-      <span style="font-family: BankGothicFamily; font-size: 28px;text-decoration: underline">CEMENT INDUSTRIES</span><br>
+      <span style="font-family: BahamasFamily;font-weight: bold; font-size: 60px;text-decoration: underline">SHREENATHJI</span>
+      <span style="font-family: BankGothicFamily; font-size: 28px;text-decoration: underline;display: inline-block;transform: scaleY(1.5)">CEMENT INDUSTRIES</span><br>
       <span style="font-size:20px"> Survey No. 44, Plot No. 6,7,8, HADAMTALA</span><br>
       <span style="font-size:20px">Ta. Kotdasangani, Dist. : Rajkot (Gujarat), Mo. 99989 45722</span></p>
       <br>
     </div>
-    <div class="col-sm-3 border" style="border-bottom:none !important;">
+    <div class="col-sm-3 border" style="border-bottom:none !important;padding:0px;">
       <br>
-      <span style="font-family: RobotoFamily;font-size:25px;margin-left:30px;">{{this.invoice}} INVOICE</span><br><br><br>
-      <pre>State           : Gujarat</pre><br>
-      <pre>State Code : 24</pre>
+      <span style="font-family: RobotoFamily;font-size:25px;margin-left:30px;padding-left:15px">{{this.invoice}} INVOICE</span><br><br>
+      <div class="border" style="padding-left:15px;border-right: none !important;border-left: none !important;font-weight:bold;font-size:19px;margin-bottom:15px;">
+          CASH MEMO / DEBIT MEMO
+      </div>
+      <pre>   State           : Gujarat</pre><br>
+      <pre>   State Code : 24</pre>
     </div>
   </div>
 
   <div class="row">
-    <div class="col-sm-9 border" style="border-bottom:none !important;border-right:none !important;">
-      <span style="font-weight:bold">Name & Address of Consignee:</span>
+    <div class="col-sm-9 border" style="border-right:none !important;font-weight:bold;">
+      <span>Name & Address of Consignee:</span>
       <br>
-      <span style="margin-left:30px;">{{this.consignee}}</span>
-      <br>
+      <span style="margin-left:30px;font-size:25px;">{{this.consignee}}</span>
       <br>
       <br>
       
     </div>
-    <div class="col-sm-3 border" style="border-bottom:none !important;font-size:25px;font-weight:bold">
+    <div class="col-sm-3 border" style="font-weight:bold;">
       <br>
-      <span>INVOICE No. : {{this.invoiceNo}}</span>
+      <span style="font-size:25px;">INVOICE No. : {{this.invoiceNo}}</span>
       
     </div>
   </div>
 
   <div class="row">
     <div class="col-sm-6" style="border-left:1px solid black">
-      <span style="font-weight:bold">Customer GSTIN: </span><span>{{this.custGST}}</span>
+      <br><span style="font-weight:bold">Customer GSTIN: </span><span>{{this.custGST}}</span>
     </div>
     <div class="col-md-3">
+      <pre>City : {{this.custCity}}</pre><br>
       <pre>State : {{this.custState}}</pre><br>
       <pre>State Code : {{this.custStateCode}}</pre>
     </div>
     <div class="col-sm-3 border" style="border-bottom:none !important;border-top:none !important;font-size:20px;font-weight:bold">
-      <span>DATE: {{this.todayDate}}</span>
+      <br><span>DATE :   {{this.todayDate}}</span>
     </div>
   </div>
 
@@ -53,11 +56,11 @@
     <table style="width:100%">
       <tr>
         <th style="width:5%">Sr. No.</th>
-        <th style="width:25%">Description of Goods</th>
+        <th style="width:23%">Description of Goods</th>
         <th style="width:15%">Identification Mark</th>
         <th style="width:10%">HSN Code</th>
         <th style="width:15%">Quantity M.T. / Bags</th>
-        <th style="width:15%">Rate</th>
+        <th style="width:17%">Rate</th>
         <th style="width:15%">Total Amount</th>
       </tr>
       <tr>
@@ -70,17 +73,21 @@
         <td class="rowProp" style="text-align:right"><br>{{this.totAmount | number : '1.2'}}</td>
       </tr>
       <tr>
-        <td colspan="5"><span>Dispatch Through  :  {{this.dispatch}}</span><span style="margin-left:250px;">Freight: {{this.freight}}</span></td>
+        <td colspan="5" style="font-weight:bold">
+          <span>This Product is manufactured by mini cement plant</span><br>
+          <span>UL Paid by : Customer arrange</span><br>
+          <span>Rate is as per X Factory</span>
+        </td>
         <td>TOTAL Rs.</td>
         <td class="amtProp">{{this.totAmount | number : '1.2'}}</td>
       </tr>
       <tr>
-          <td colspan="5">Driver Mobile No.  :  {{this.mobile}}</td>
+          <td colspan="5"><span>Dispatch Through  :  {{this.dispatch}}</span><span style="float:right;margin-right:5px">Freight : {{this.freight}}</span></td>
           <td>SGST@ {{this.halfgst | number : '1.2'}} %</td>
           <td class="amtProp">{{this.halfgstAmt | number : '1.2'}}</td>
         </tr>
       <tr>
-        <td colspan="5">Vehicle No.  :   {{this.vehicleNo}}</td>
+        <td colspan="5"><span>Vehicle No.  :   {{this.vehicleNo}}</span><span style="float:right;margin-right:5px">Driver Mobile No.  :  {{this.mobile}}</span></td>
         <td>CGST@ {{this.halfgst | number : '1.2'}} %</td>
         <td class="amtProp">{{this.halfgstAmt | number : '1.2'}}</td>
       </tr>
@@ -104,13 +111,12 @@
 
   <div class="row">
     <div class="col-sm-9" style="font-weight:bold;border-left:1px solid black">
+      <br>
       <span>We hereby declare that our registration certificate number are as under</span><br>
       <pre>GSTIN No.      : 24ABHFS8289H1ZM</pre><br>
       <pre>Bank Name    : KOTAK MAHINDRA</pre><br>
       <pre>Bank A/c No.  : 1612088837</pre><br>
       <pre>IFSC Code      : KKBK0002788</pre><br><br>
-      <span>This Product is manufactured by mini cement plant</span><br>
-      <span>Rate is as per X Factory</span>
     </div>
     <div class="col-sm-3 border text-center" style="border-bottom:none !important;border-top:none !important">
       <span style="font-size:14px">For and behalf of:</span>

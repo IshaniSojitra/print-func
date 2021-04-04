@@ -1,0 +1,184 @@
+<form [formGroup]="billForm">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <span style="font-family: FredokaFamily;font-weight: bold; font-size: 30px">WELLSAND PRODUCTS</span>
+        <br>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-2">
+        <label for="invoiceNo">Invoice No. :</label>
+      </div>
+      <div class="col-sm-2">
+        <input type="text" class="form-control" formControlName="invoiceNo" />
+      </div>
+      <div class="col-sm-1 offset-sm-3">
+        <label for="todayDate">Date:</label>
+      </div>
+      <div class="col-sm-2">
+        <input type="text" class="form-control" formControlName="todayDate" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <label for="invoice">Invoice:</label>
+      </div>
+      <div class="col-sm-3">
+        <input type="radio" id="tax" name="invoice" formControlName="invoice" value="TAX">
+        <label for="tax">TAX</label>&nbsp;&nbsp;
+        <input type="radio" id="retail" name="invoice" formControlName="invoice" value="RETAIL">
+        <label for="retail">RETAIL</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <label for="consignee">Name & Addr. of Consignee:</label>
+      </div>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" formControlName="consignee" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <label for="custGST">Customer GSTIN:</label>
+      </div>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" formControlName="custGST" />
+      </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-2">
+          <label for="custCity">Customer City:</label>
+        </div>
+        <div class="col-sm-3">
+          <input type="text" class="form-control" formControlName="custCity" />
+        </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <label for="custState">Customer State:</label>
+      </div>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" formControlName="custState" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <label for="custStateCode">Customer State Code:</label>
+      </div>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" formControlName="custStateCode" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <label for="goodsDesc">Description of Goods:</label>
+      </div>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" formControlName="goodsDesc" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <label for="idMark">Identification Mark:</label>
+      </div>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" formControlName="idMark" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <label for="hsnCode">HSN Code:</label>
+      </div>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" formControlName="hsnCode" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <label for="quantity">Quantity:</label>
+      </div>
+      <div class="col-sm-3">
+        <input type="number" class="form-control" formControlName="quantity" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <label for="rate">Rate:</label>
+      </div>
+      <div class="col-sm-3">
+        <input type="number" class="form-control" formControlName="rate" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <label for="gst">GST %</label>
+      </div>
+      <div class="col-sm-3">
+        <input type="number" class="form-control" formControlName="gst" />
+      </div>
+    </div>
+
+    <!-- <div class="row">
+      <div class="col-sm-2">
+        <label for="igst">IGST %</label>
+      </div>
+      <div class="col-sm-3">
+        <input type="number" class="form-control" formControlName="igst" />
+      </div>
+    </div> -->
+
+    <div class="row">
+      <div class="col-sm-2">
+        <label for="vehicleNo">Vehicle No.</label>
+      </div>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" formControlName="vehicleNo" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <label for="dispatch">Dispatch Through:</label>
+      </div>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" formControlName="dispatch" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <label for="mobile">Mobile No.</label>
+      </div>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" formControlName="mobile" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <label for="freight">Freight:</label>
+      </div>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" formControlName="freight" />
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <input type="button" (click)="previewPage()" class="btn btn-info" value="Preview" />
+    </div>
+  </div>
+</form>

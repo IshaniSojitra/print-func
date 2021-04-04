@@ -1,7 +1,5 @@
-.buttonClass{
-    margin-right:30px;
-}
-
-.row{
-    margin-bottom:10px;
+.centerAlign{
+  display: block;
+  margin-left: 43%;
+  margin-top: 20%;
 }

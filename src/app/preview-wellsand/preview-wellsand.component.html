@@ -5,10 +5,11 @@
     </div>
     <div class="col-sm-7" style="border-top:1px solid black">
       <div style="display: inline-block">
-      <span style="font-family: BahamasFamily;font-weight: bold; font-size: 60px;">SHREENATHJI</span><hr style="border: 1px solid;width:66%;margin:0px !important">
-      <span style="font-family: BankGothicFamily; font-size: 28px;display: inline-block;transform: scaleY(1.5)">CEMENT INDUSTRIES</span><hr style="border: 1px solid;width:66%;margin:0px !important">
-      <span style="font-size:20px"> Survey No. 44, Plot No. 6,7,8, HADAMTALA</span><br>
-      <span style="font-size:20px">Ta. Kotdasangani, Dist. : Rajkot (Gujarat), Mo. 99989 45722</span></div>
+      <span style="font-family: BahamasFamily;font-weight: bold; font-size: 60px; text-decoration: underline;">WELLSAND PRODUCTS</span><br>
+      <!-- <span style="font-family: BankGothicFamily; font-size: 28px;display: inline-block;transform: scaleY(1.5)">PRODUCTS</span><hr style="border: 1px solid;width:66%;margin:0px !important"> -->
+      <span style="font-family: cursive; font-style: italic;font-weight: bold;">Mfg.: All kind of foundry moulding coated sands</span><br>
+      <span style="font-size:20px"> N. H. 8 - B, Bhunava Chokdi, HADAMTALA</span><br>
+      <span style="font-size:20px">Ta. Kotdasangani, Dist. : Rajkot (Gujarat), Mo. 98985 53524</span></div>
       <br>
     </div>
     <div class="col-sm-3 border" style="border-bottom:none !important;padding:0px;">
@@ -74,7 +75,7 @@
       </tr>
       <tr>
         <td colspan="5" style="font-weight:bold">
-          <span>This Product is manufactured by mini cement plant</span><br>
+          <!-- <span>This Product is manufactured by mini cement plant</span><br> -->
           <span>UL Paid by : Customer arrange</span><br>
           <span>Rate is as per X Factory</span>
         </td>
@@ -91,11 +92,11 @@
         <td>CGST@ {{this.halfgst | number : '1.2'}} %</td>
         <td class="amtProp">{{this.halfgstAmt | number : '1.2'}}</td>
       </tr>
-      <tr>
+      <!-- <tr>
           <td colspan="5"><span style="font-weight:bold">IGST Amount in Words: </span> <span class="italic" style="margin-left:10px">{{this.totigstWord | titlecase}}</span></td>
           <td>IGST@ {{this.igst | number : '1.2'}} %</td>
           <td class="amtProp">{{this.igstAmt | number : '1.2'}}</td>
-        </tr>
+        </tr> -->
       <tr>
         <td colspan="5"><span style="font-weight:bold">GST Amount in Words: </span> <span class="italic" style="margin-left:10px">{{this.totgstWord | titlecase}}</span></td>
         <td>Round off</td>
@@ -113,7 +114,7 @@
     <div class="col-sm-9" style="font-weight:bold;border-left:1px solid black">
       <br>
       <span>We hereby declare that our registration certificate number are as under</span><br>
-      <pre>GSTIN No.      : 24ABHFS8289H1ZM</pre><br>
+      <pre>GSTIN No.      : 24AAAFW7165J1ZX</pre><br>
       <pre>Bank Name    : KOTAK MAHINDRA</pre><br>
       <pre>Bank A/c No.  : 1612088837</pre><br>
       <pre>IFSC Code      : KKBK0002788</pre><br><br>
@@ -121,7 +122,7 @@
     <div class="col-sm-3 border text-center" style="border-bottom:none !important;border-top:none !important">
       <span style="font-size:14px">For and behalf of:</span>
       <br>
-      <span style="font-weight: bold; font-size:17px">SHREENATHJI CEMENT INDUSTRIES</span>
+      <span style="font-weight: bold; font-size:17px">WELLSAND PRODUCTS</span>
       <br>
       <br>
       <br>
@@ -143,7 +144,7 @@
 
   <div class="row justify-content-center" style="margin-top:5px">
     
-    <input type="button" [routerLink]="['/shreenathji']" class="btn btn-info buttonClass" value="Back" />
+    <input type="button" [routerLink]="['/wellsand']" class="btn btn-info buttonClass" value="Back" />
     <input type="submit" class="btn btn-secondary buttonClass" (click)="onSubmit()" value="Print" />
   </div>
 

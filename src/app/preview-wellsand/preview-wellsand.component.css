@@ -1,0 +1,40 @@
+table, th, td {
+    border: 1px solid black;
+  }
+
+td{
+    height: 50px;
+}
+
+th{
+    text-align: center;
+}
+
+.rowProp {
+    height : 300px;
+    vertical-align: top;
+    text-align: center;
+    font-size : 24px;
+    font-weight: bold;
+}
+
+.amtProp{
+    text-align: right;
+}
+
+pre {
+    display: contents !important;
+    font-family: sans-serif !important;
+}
+
+.border{
+    border-color: black !important;
+}
+
+.buttonClass{
+    margin-right:30px;
+}
+
+.italic{
+    font-style: italic;
+}
